@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menu>
+
+ <categories>
+    
+   <category number="0", title="Pizzas", objnum="00">
+    <objnum>00</objnum>
+   
+    <item name = "Onions", objnum="0000">
+     
+      <variation objnum = "000000", size = "small", description ="Small w/o extra cheese" , cart_description ="Small Onion Pizza">
+       <price>6.85</price>
+       </variation>
+    
+      <variation objnum = "000001", size = "small", description ="Small w/extra cheese" , cart_description ="Small Onion Pizza w/Extra Cheese">
+       <price>8.10</price>
+      </variation>
+     
+      <variation objnum = "000002", size = "large", description ="Large w/o extra cheese" , cart_description ="Large Onion Pizza">
+       <price>10.85</price>
+      </variation> 
+    
+      <variation objnum = "000003", size = "large", description ="Large w/extra cheese" , cart_description ="Large Onion Pizza w/Extra Cheese">
+       <price>12.70</price>
+      </variation>
+    
+    </item>   
+    
+    
+    <item name = "Peppers", objnum="0001">
+     
+      <variation objnum = "000100", size = "small", description ="Small w/o extra cheese" , cart_description ="Small Pepper Pizza">
+       <price>6.85</price>
+       </variation>
+    
+      <variation objnum = "000101", size = "small", description ="Small w/extra cheese" , cart_description ="Small Pepper Pizza w/Extra Cheese">
+       <price>8.10</price>
+      </variation>
+     
+      <variation objnum = "000102", size = "large", description ="Large w/o extra cheese" , cart_description ="Large Pepper Pizza">
+       <price>10.85</price>
+      </variation> 
+    
+      <variation objnum = "000103", size = "large", description ="Large w/extra cheese" , cart_description ="Large Pepper Pizza w/Extra Cheese">
+       <price>12.70</price>
+      </variation>
+    
+    </item>
+    
+   <item name = "Broccoli", objnum="0002">
+     
+      <variation objnum = "000200", size = "small", description ="Small w/o extra cheese" , cart_description ="Small Pepper Pizza">
+       <price>6.85</price>
+       </variation>
+    
+      <variation objnum = "000201", size = "small", description ="Small w/extra cheese" , cart_description ="Small Pepper Pizza w/Extra Cheese">
+       <price>8.10</price>
+      </variation>
+     
+      <variation objnum = "000202", size = "large", description ="Large w/o extra cheese" , cart_description ="Large Pepper Pizza">
+       <price>10.85</price>
+      </variation> 
+    
+      <variation objnum = "000203", size = "large", description ="Large w/extra cheese" , cart_description ="Large Pepper Pizza w/Extra Cheese">
+       <price>12.70</price>
+      </variation>
+    
+    </item>
+   
+   
+   
+   </category>
+ 
+ 
+ <category number="1">
+   <title>Speciality Pizzas</title>
+   </category>
+ 
+ <category number="2">
+   <title>Special Dinners</title>
+   </category>
+ 
+<category number="3">
+   <title>Side Orders</title>
+   </category> 
+ 
+ <category number="4">
+   <title>Salads</title>
+   </category> 
+ 
+ <category number="5">
+   <title>Spaghetti or Ziti</title>
+   </category> 
+
+<category number="6">
+   <title>Lasagna, Ravioli, or Manicotti</title>
+   </category> 
+
+<category number="7">
+   <title>Calzones</title>
+   </category>    
+ 
+ <category number="7">
+   <title>Wraps</title>
+   </category>    
+ 
+ 
+ 
+ </categories>
+
+
+
+</menu>

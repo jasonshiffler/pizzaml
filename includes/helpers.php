@@ -22,4 +22,37 @@ function render($template, $data = array())
     }
 }
 
+
+//This class defines an object for the items put in the cart.  
+//Each object has a name and a qty
+
+
+class Item
+	{
+		private $name;
+		private $quantity;
+		
+		public function __construct($objnum,$quantity)
+		{
+			$this->name = $objnum;
+			$this->quantity = $quantity;
+		}
+		public function getName()
+		{
+			return $this->name;
+		}
+				
+		public function getQuantity()
+		{
+			return $this->quantity;
+		}
+		
+		
+	}
+
+
+
+
+
+
 ?>

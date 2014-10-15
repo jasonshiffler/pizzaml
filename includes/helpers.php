@@ -1,6 +1,11 @@
 <?php
 
 
+#This reference is for any local links that need to be created 
+
+$GLOBALS['server_ref'] = '10.3.11.84';
+
+
 /**
    Renders template.
  *

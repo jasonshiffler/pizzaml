@@ -4,111 +4,362 @@
 
  <categories>
     
-   <category number="0", title="Pizzas", objnum="00">
+   <category number="0" title="Pizzas" objnum="00" size ="YES">
     <objnum>00</objnum>
    
-    <item name = "Onions", objnum="0000">
-     
-      <variation objnum = "000000", size = "small", description ="Small w/o extra cheese" , cart_description ="Small Onion Pizza">
+    <item name = "Onions" objnum="0000">     
+      <variation objnum = "000000" size = "small" description ="Small w/o extra cheese"  cart_description ="Small Onion Pizza">
        <price>6.85</price>
        </variation>
     
-      <variation objnum = "000001", size = "small", description ="Small w/extra cheese" , cart_description ="Small Onion Pizza w/Extra Cheese">
+      <variation objnum = "000001" size = "small" description ="Small w/extra cheese"  cart_description ="Small Onion Pizza w/Extra Cheese">
        <price>8.10</price>
       </variation>
      
-      <variation objnum = "000002", size = "large", description ="Large w/o extra cheese" , cart_description ="Large Onion Pizza">
+      <variation objnum = "000002" size = "large" description ="Large w/o extra cheese"  cart_description ="Large Onion Pizza">
        <price>10.85</price>
       </variation> 
     
-      <variation objnum = "000003", size = "large", description ="Large w/extra cheese" , cart_description ="Large Onion Pizza w/Extra Cheese">
+      <variation objnum = "000003" size = "large" description ="Large w/extra cheese"  cart_description ="Large Onion Pizza w/Extra Cheese">
        <price>12.70</price>
-      </variation>
-    
+      </variation>    
     </item>   
     
     
-    <item name = "Peppers", objnum="0001">
-     
-      <variation objnum = "000100", size = "small", description ="Small w/o extra cheese" , cart_description ="Small Pepper Pizza">
+    <item name = "Peppers" objnum="0001">     
+      <variation objnum = "000100" size = "small" description ="Small w/o extra cheese"  cart_description ="Small Pepper Pizza">
        <price>6.85</price>
        </variation>
     
-      <variation objnum = "000101", size = "small", description ="Small w/extra cheese" , cart_description ="Small Pepper Pizza w/Extra Cheese">
+      <variation objnum = "000101" size = "small" description ="Small w/extra cheese"  cart_description ="Small Pepper Pizza w/Extra Cheese">
        <price>8.10</price>
       </variation>
      
-      <variation objnum = "000102", size = "large", description ="Large w/o extra cheese" , cart_description ="Large Pepper Pizza">
+      <variation objnum = "000102" size = "large" description ="Large w/o extra cheese"  cart_description ="Large Pepper Pizza">
        <price>10.85</price>
       </variation> 
     
-      <variation objnum = "000103", size = "large", description ="Large w/extra cheese" , cart_description ="Large Pepper Pizza w/Extra Cheese">
+      <variation objnum = "000103" size = "large" description ="Large w/extra cheese"  cart_description ="Large Pepper Pizza w/Extra Cheese">
        <price>12.70</price>
-      </variation>
-    
+      </variation>    
     </item>
     
-   <item name = "Broccoli", objnum="0002">
-     
-      <variation objnum = "000200", size = "small", description ="Small w/o extra cheese" , cart_description ="Small Pepper Pizza">
+   <item name = "Broccoli" objnum="0002">     
+      <variation objnum = "000200" size = "small" description ="Small w/o extra cheese"  cart_description ="Small Pepper Pizza">
        <price>6.85</price>
        </variation>
     
-      <variation objnum = "000201", size = "small", description ="Small w/extra cheese" , cart_description ="Small Pepper Pizza w/Extra Cheese">
+      <variation objnum = "000201" size = "small" description ="Small w/extra cheese"  cart_description ="Small Pepper Pizza w/Extra Cheese">
        <price>8.10</price>
       </variation>
      
-      <variation objnum = "000202", size = "large", description ="Large w/o extra cheese" , cart_description ="Large Pepper Pizza">
+      <variation objnum = "000202" size = "large" description ="Large w/o extra cheese"  cart_description ="Large Pepper Pizza">
        <price>10.85</price>
       </variation> 
     
-      <variation objnum = "000203", size = "large", description ="Large w/extra cheese" , cart_description ="Large Pepper Pizza w/Extra Cheese">
+      <variation objnum = "000203" size = "large" description ="Large w/extra cheese"  cart_description ="Large Pepper Pizza w/Extra Cheese">
        <price>12.70</price>
+      </variation>    
+    </item>
+     
+   </category>
+ 
+ 
+ <category number="1" title="Speciality Pizzas" size="YES">
+  <objnum>01</objnum> 
+
+   <item name = "Three Aces Special" objnum="0100">
+      <variation objnum = "010000" size = "small" description ="Small"  cart_description ="Small Three Aces Special Pizza">
+       <price>9.80</price>
       </variation>
-    
+
+     <variation objnum = "010001" size = "large" description ="Large"  cart_description ="Large Three Aces Special Pizza">
+       <price>15.80</price>
+     </variation>
+   </item>
+
+   <item name = "Mediterranean" objnum="0101">
+      <variation objnum = "010100" size = "small" description ="Small"  cart_description ="Small Mediterranean Pizza">
+       <price>9.80</price>
+       </variation>
+
+      <variation objnum = "010101" size = "large" description ="Large"  cart_description ="Large Mediterranean Pizza">
+       <price>15.80</price>
+      </variation>
+   </item>
+
+
+   <item name = "Vegetarian" objnum="0102">
+      <variation objnum = "010200" size = "small" description ="Small"  cart_description ="Small Vegetarian Pizza">
+       <price>9.80</price>
+       </variation>
+
+      <variation objnum = "010201" size = "large" description ="Large"  cart_description ="Large Vegetrian Pizza">
+       <price>15.80</price>
+      </variation>
+   </item>
+
+ </category>
+
+<category number="2" title="Special Dinners" size = "NO">
+  <objnum>02</objnum>  
+
+  <item name = "Chicken Wing Dinner" objnum="0200">
+   <variation objnum = "020000" size = "NA" description ="NA"  cart_description ="Chicken Wing Dinner">
+    <price>7.25</price>
+   </variation>
+  </item>
+
+  <item name = "Gyro Plate" objnum="0201">
+      <variation objnum = "020100" size = "NA" description ="NA"  cart_description ="Gyro Plate">
+       <price>7.25</price>
+       </variation>
+ </item>
+
+ <item name = "Chicken Finger Plate" objnum="0202">
+      <variation objnum = "020200" size = "NA" description ="NA"  cart_description ="Chicken Finger Plate">
+       <price>7.25</price>
+       </variation>
+ </item>
+</category>
+ 
+<category number="3" title="Side Orders" size="YES">
+  <objnum>03</objnum>
+
+   <item name = "Onion Rings" objnum="0300">
+      <variation objnum = "030000" size = "small" description ="small"  cart_description ="Small Onion Rings">
+       <price>2.60</price>
+       </variation>
+
+      <variation objnum = "030001" size = "large" description ="large"  cart_description ="Large Onion Rings">
+       <price>2.95</price>
+      </variation>
+   </item>
+
+   <item name = "French Fries" objnum="0301">
+      <variation objnum = "030100" size = "small" description ="small"  cart_description ="Small French Fries">
+       <price>2.25</price>
+       </variation>
+
+      <variation objnum = "030101" size = "large" description ="large"  cart_description ="Large French Fries">
+       <price>2.65</price>
+      </variation>
+   </item>
+
+ <item name = "Spicy Fries" objnum="0302">
+      <variation objnum = "030200" size = "small" description ="small"  cart_description ="Small Spicy Fries">
+       <price>2.60</price>
+      </variation>
+
+      <variation objnum = "030201" size = "large" description ="large"  cart_description ="Large Spicy Fries">
+       <price>2.95</price>
+      </variation>
+  </item>
+
+</category> 
+ 
+<category number="4" title="Salads" size="YES">
+  <objnum>04</objnum> 
+
+ <item name = "Garden" objnum="0400">
+      <variation objnum = "040000" size = "small" description ="small"  cart_description ="Small Garden Salad">
+       <price>3.50</price>
+       </variation>
+
+      <variation objnum = "040001" size = "large" description ="large"  cart_description ="Large Garden Salad">
+       <price>4.50</price>
+      </variation>
+  </item>
+
+ <item name = "Greek" objnum="0401">
+      <variation objnum = "040100" size = "small" description ="small"  cart_description ="Small Greek Salad">
+       <price>4.50</price>
+       </variation>
+
+      <variation objnum = "040101" size = "large" description ="large"  cart_description ="Large Greek Salad">
+       <price>5.50</price>
+      </variation>
+  </item>
+
+ <item name = "AntiPasto" objnum="0402">
+      <variation objnum = "040200" size = "small" description ="small"  cart_description ="Small Antipasto Salad">
+       <price>4.50</price>
+       </variation>
+
+
+      <variation objnum = "040201" size = "large" description ="large"  cart_description ="Large Antipasto Salad">
+       <price>5.50</price>
+      </variation>
+  </item>
+
+</category> 
+ 
+
+<category number="5" title ="Spaghetti or Ziti" size="NO">
+  <objnum>05</objnum> 
+
+   <item name = "With Sauce" objnum="0500">
+      <variation objnum = "050000" size = "NA" description ="Ziti"  cart_description ="Ziti with Sauce">
+       <price>5.40</price>
+       </variation>
+
+      <variation objnum = "050001" size = "NA" description ="Spaghetti"  cart_description ="Spaghetti with Sauce">
+       <price>5.40</price>
+      </variation>
+  </item>
+
+   <item name = "With Sausage" objnum="0501">
+      <variation objnum = "050100" size = "NA" description ="Ziti"  cart_description ="Ziti with Sausage">
+       <price>6.45</price>
+       </variation>
+
+      <variation objnum = "050101" size = "NA" description ="Spaghetti"  cart_description ="Spaghetti with Sausage">
+       <price>6.45</price>
+      </variation>
+  </item>
+
+   <item name = "With Meat Ball" objnum="0502">
+      <variation objnum = "050200" size = "NA" description ="Ziti"  cart_description ="Ziti with Meat Ball">
+       <price>6.45</price>
+       </variation>
+
+      <variation objnum = "050201" size = "NA" description ="Spaghetti"  cart_description ="Spaghetti with Meat Ball">
+       <price>6.45</price>
+      </variation>
+  </item>
+
+</category> 
+
+
+<category number="6" title ="Lasagna, Ravioli, or Manicotti" size="NO">
+  <objnum>06</objnum> 
+
+     <item name = "With Sauce" objnum="0600">
+
+      <variation objnum = "060000" size = "NA" description ="Lasagna"  cart_description ="Lasagna with Sauce">
+       <price>6.25</price>
+       </variation>
+
+      <variation objnum = "060001" size = "NA" description ="Ravioli"  cart_description ="Ravioli with Sauce">
+       <price>6.25</price>
+      </variation>
+      
+      <variation objnum = "060002" size = "NA" description ="Manicotti"  cart_description ="Manicotti with Sauce">
+       <price>6.25</price>
+      </variation>
+            
+  </item>
+
+     <item name = "With Sausage" objnum="0601">
+       <variation objnum = "060100" size = "NA" description ="Lasagna"  cart_description ="Lasagna with Sausage">
+       <price>7.25</price>
+       </variation>
+
+      <variation objnum = "060101" size = "NA" description ="Ravioli"  cart_description ="Ravioli with Sausage">
+       <price>7.25</price>
+      </variation>
+      
+      <variation objnum = "060102" size = "NA" description ="Manicotti"  cart_description ="Manicotti with Sausage">
+       <price>7.25</price>
+      </variation>
+     
+  </item>
+
+     <item name = "With Meat Ball" objnum="0602"> 
+       <variation objnum = "060200" size = "NA" description ="Lasagna"  cart_description ="Lasagna with Meatball">
+       <price>7.25</price>
+       </variation>
+
+      <variation objnum = "060201" size = "NA" description ="Ravioli"  cart_description ="Ravioli with Meatball">
+       <price>7.25</price>
+      </variation>
+      
+      <variation objnum = "060202" size = "NA" description ="Manicotti"  cart_description ="Manicotti with Meatball">
+       <price>7.25</price>
+      </variation>    
+   </item>
+
+</category> 
+
+<category number="7" title = "Homemade Calzones" size ="YES">
+  <objnum>07</objnum> 
+
+   <item name = "Vegetarian" objnum="0700">
+      <variation objnum = "070000" size = "large" description ="Vegetarian"  cart_description ="Large Vegetarian Calzone">
+       <price>7.35</price>
+      </variation>            
+    </item>
+  
+   <item name = "Sausage" objnum="0701">
+      <variation objnum = "070100" size = "large" description ="Sausage"  cart_description ="Large Sausage Calzone">
+       <price>7.35</price>
+      </variation>            
+    </item>
+  
+  <item name = "Ham and Cheese" objnum="0702">
+      <variation objnum = "070200" size = "large" description ="Ham and Cheese"  cart_description ="Large Ham and Cheese Calzone">
+       <price>7.35</price>
+      </variation>            
+    </item>
+ </category>    
+ 
+ <category number="8" title = "Wraps" size="NO">
+ <objnum>08</objnum> 
+   
+   <item name = "Turkey Club" objnum="0800">
+      <variation objnum = "080000" size = "NA" description ="Turkey Club"  cart_description ="Turkey Club Wrap">
+       <price>4.95</price>
+      </variation>            
     </item>
    
+   <item name = "Chicken Cobb" objnum="0801">
+      <variation objnum = "080100" size = "NA" description ="Chicken Cobb"  cart_description ="Chicken Cobb Wrap">
+       <price>4.95</price>
+      </variation>            
+    </item>
    
-   
-   </category>
+   <item name = "Greek Supreme" objnum="0802">
+      <variation objnum = "080200" size = "NA" description ="Greek Supreme"  cart_description ="Greek Supreme Wrap">
+       <price>4.95</price>
+      </variation>            
+    </item>
+     
+ </category>    
  
+<category number="9" title = "Grinders" size="YES">
+ <objnum>09</objnum>
  
- <category number="1">
-   <title>Speciality Pizzas</title>
-   </category>
+  <item name = "Meatless" objnum="0900">
+      <variation objnum = "090000" size = "small" description ="Meatless"  cart_description ="Small Meatless Grinder">
+       <price>4.50</price>
+      </variation>
+            
+     <variation objnum = "090001" size = "large" description ="Meatless"  cart_description ="Large Meatless Grinder">
+       <price>4.95</price>
+      </variation>                              
+  </item>
  
- <category number="2">
-   <title>Special Dinners</title>
-   </category>
+  <item name = "Cheeseburger" objnum="0901">
+      <variation objnum = "090100" size = "small" description ="Cheeseburger"  cart_description ="Small Cheeseburger Grinder">
+       <price>4.75</price>
+      </variation>
+            
+     <variation objnum = "090101" size = "large" description ="Cheeseburger"  cart_description ="Large Cheeseburger Grinder">
+       <price>5.75</price>
+      </variation>                              
+  </item>
  
-<category number="3">
-   <title>Side Orders</title>
-   </category> 
- 
- <category number="4">
-   <title>Salads</title>
-   </category> 
- 
- <category number="5">
-   <title>Spaghetti or Ziti</title>
-   </category> 
+  <item name = "Hamburger" objnum="0902">
+      <variation objnum = "090200" size = "small" description ="Hamburger"  cart_description ="Small Hamburger Grinder">
+       <price>4.50</price>
+      </variation>
+            
+     <variation objnum = "090201" size = "large" description ="Hamburger"  cart_description ="Large Hamburger Grinder">
+       <price>4.95</price>
+      </variation>       
+  </item>
 
-<category number="6">
-   <title>Lasagna, Ravioli, or Manicotti</title>
-   </category> 
+ </category>
 
-<category number="7">
-   <title>Calzones</title>
-   </category>    
- 
- <category number="7">
-   <title>Wraps</title>
-   </category>    
- 
- 
- 
- </categories>
-
-
-
+</categories>
 </menu>

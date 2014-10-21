@@ -5,6 +5,9 @@ $objnumcount=0;
 $qtycount=0;
 $negativeqty=0;             //Boolean to track if the user entered a negative qty
 
+print_r($_POST);
+
+
 foreach($_POST as $item) //This foreach splits the data from the POST into two arrays, one for objnums and one for qtys.
     {
      if ($count % 2 == 0) //if the count is even its the objnum

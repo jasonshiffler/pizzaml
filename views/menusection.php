@@ -32,8 +32,8 @@ foreach($category[0]->item as $item)                                            
       }
     echo '</select>';                                                                         //done with this pull down 
     echo '</td>';
-    echo '<td><input type="text" maxlength="2" value="0" name='.$item["name"].'qty></td>';   //create a text box to enter the quantity wanted
-    echo '</tr>';
+    echo '<td><input type="text" maxlength="2" value="0" name='.str_replace(" ", "",$item["name"]).'qty></td>';   //create a text box to enter the quantity wanted, whitespace is stripped
+    echo '</tr>';                                                                                                //so $POST keyname doesn't get cutoff
   }
 
 echo '</table>';                                                                              //done with table

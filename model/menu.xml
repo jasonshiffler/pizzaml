@@ -105,19 +105,19 @@
   <objnum>02</objnum>  
 
   <item name = "Chicken Wing Dinner" objnum="0200">
-   <variation objnum = "020000" size = "NA" description ="NA"  cart_description ="Chicken Wing Dinner">
+   <variation objnum = "020000" size = "NA" description =""  cart_description ="Chicken Wing Dinner">
     <price>7.25</price>
    </variation>
   </item>
 
   <item name = "Gyro Plate" objnum="0201">
-      <variation objnum = "020100" size = "NA" description ="NA"  cart_description ="Gyro Plate">
+      <variation objnum = "020100" size = "NA" description =""  cart_description ="Gyro Plate">
        <price>7.25</price>
        </variation>
  </item>
 
  <item name = "Chicken Finger Plate" objnum="0202">
-      <variation objnum = "020200" size = "NA" description ="NA"  cart_description ="Chicken Finger Plate">
+      <variation objnum = "020200" size = "NA" description =""  cart_description ="Chicken Finger Plate">
        <price>7.25</price>
        </variation>
  </item>

@@ -29,8 +29,8 @@ function render($template, $data = array())
 
 class Item
 	{
-		private $name;
-		private $quantity;
+		public $name;
+		public $quantity;
 		
 		public function __construct($objnum,$quantity)
 		{

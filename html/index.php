@@ -1,6 +1,6 @@
 <?php
+require_once('../includes/helpers.php'); //make sure we do the includes before session start since it ends up in the session variable
 session_start();
-require_once('../includes/helpers.php');
 
 
 

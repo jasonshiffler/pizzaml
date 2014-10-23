@@ -13,7 +13,7 @@ foreach ($dom->xpath("/menu/categories/category") as $category)   #iterate throu
       print "</li>";
     }
 
-
+echo '<a href=http://'.$GLOBALS['server_ref'].'?page=viewcart> MyCart</a>';
 ?>
 
 

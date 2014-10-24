@@ -29,18 +29,19 @@ if ($negativeqty==1)                                        //Check to see if th
    echo '<h2> Quantities must be positive!</h2>';
    echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Previous Page</a></br>'; //Create a link so the user can go back to the previous page
   }
-else                                                                          //if they didn't order a negtive qty proceed with added the items to the cart
+else                                                                          //if they didn't order a negtive qty proceed with adding the items to the cart
 { 
   $count = 0;                                                                 //reinitialize count so we can use it again. This gets used to line up the qty array with the objnum array
   $itemcount = 0;                                                             //number of items that will be added to the cart.
   $ordered_something = FALSE;                                                 //Keep track of if something was actually ordered 
-  
   $num_item_incart = 0;                                                       //start by assuming nothing is in the cart
-  if (isset($_SESSION['cart']))                                               //check to see if the cart already has something in it
+  
+ if (isset($_SESSION['cart']))                                               //check to see if the cart already has something in it
   {
    $num_item_incart = count($_SESSION['cart']);                               //if so figure out how many items are already in the cart so we don't overwrite them.
   }
   
+
   
   foreach ($tmp_objnums as $item)                                             //Look through all tmp obj num array, create another array pair without entries of zero qty or no selection.
    {   
@@ -49,11 +50,44 @@ else                                                                          //
            $objnums[$itemcount]=$item;
            $qtys[$itemcount]=$tmp_qtys[$count];
            $cartitem[$itemcount] = new Item($item,$qtys[$itemcount]);
-           $_SESSION['cart'][$itemcount+$num_item_incart] = $cartitem[$itemcount];  //add item object to the cart without overwriting what was already there.      
-           $count = $count +1;
-           $itemcount = $itemcount+1;                                               //only increment the new array index if we put something in it
-           $ordered_something = TRUE;                                               //note that something was put in there cart
-          } 
+           
+           
+           $alreadyincart = FALSE;                                                  //Track if the same item is already in the cart 
+           if (isset($_SESSION['cart']))                                                //This section is to see if the item already exists in the cart
+             {
+          
+              $whereinsession = 0;                                                 //Keep track of where we are in the cart 
+          
+              foreach ($_SESSION['cart'] as $entry)
+                {
+                  if ($item == $entry->name) 
+                    { 
+                      $alreadyincart = TRUE;                                          //if these two items match up, the same item type is already in the cart
+                      echo 'Item is already in cart '.$whereinsession; 
+                    }
+                  else  
+                    {
+                  ++$whereinsession;
+                    }
+
+                 }  
+             } 
+
+
+          if($alreadyincart == FALSE)
+            { 
+             $_SESSION['cart'][$itemcount+$num_item_incart] = $cartitem[$itemcount];  //add item object to the cart without overwriting what was already there.      
+             $count = $count +1;
+             $itemcount = $itemcount+1;                                               //only increment the new array index if we put something in it
+             $ordered_something = TRUE;                                               //note that something was put in there cart
+            } 
+           else
+            {
+             $_SESSION['cart'][$whereinsession]->quantity+=$cartitem[$itemcount]->quantity;
+             $count = $count +1;
+             $ordered_something = TRUE;
+            }
+         } 
       else
         {
          $count=$count+1;                                                           //either the item was Null or the qty was 0

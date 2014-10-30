@@ -6,7 +6,6 @@ $qtycount=0;
 $negativeqty=0;                                              //Boolean to track if the user entered a negative qty
 $ordered_something = FALSE;                                    //Boolean to track if something had a qty greater that 0
 
-print_r($_POST);
 
 foreach($_POST as $item)                                     //This foreach splits the data from the POST into two arrays, one for objnums and one for qtys.
   {
@@ -26,12 +25,10 @@ foreach($_POST as $item)                                     //This foreach spli
         if($item>0)                                         //keep track if at least one item has a qty >0 (the actually ordered something) 
           {
             $ordered_something = TRUE; 
-          
           }
        }            
      $count=$count+1;                                       //Keep track of where we are in the $_POST array   
   }
-
 
 
 if ($negativeqty==1)                                        //Check to see if they tried to order a negative qty
@@ -44,26 +41,26 @@ elseif($ordered_something == FALSE)                                           //
   {
   
    echo "<h2>You hit submit but didn't order anything!</h2>";
-
    echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Previous Page</a></br>'; //Create a link so the user can go back to the previous page
   }
 
 else                                                                          //if they didn't order a negtive qty proceed with adding the items to the cart
   { 
-    $count = 0;                                                 //reinitialize count so we can use it again. This gets used to line up the qty array with the objnum array
     $itemcount = 0;                                                             //number of items that will be added to the cart.
     $ordered_something = FALSE;                                                 //Keep track of if something was actually ordered 
     $num_item_incart = 0;                                                       //start by assuming nothing is in the cart
     $cartitem = array();    
-
+    $count = 0;
   foreach($tmp_objnums as $item)                                 //This foreach creates an array of item objects but only if the item was actually ordered (no zero qtys) 
     {
-      if (($item != 'Null') and ($tmp_qtys[$count] !=0))
+      if (($item != 'Null') and ($tmp_qtys[$itemcount] !=0))
         {
            $objnums[$itemcount]=$item;
-           $qtys[$itemcount]=$tmp_qtys[$count];
+           $qtys[$itemcount]=$tmp_qtys[$itemcount];
            $cartitem[$itemcount] = new Item($item,$qtys[$itemcount]);
         }
+      ++$itemcount;    
+
     }   
 
 
@@ -74,21 +71,41 @@ else                                                                          //
 
   foreach($cartitem as $item)
     {
-      if (isset($_SESSION['cart']) == FALSE)    
+      if (isset($_SESSION['cart']) == FALSE)                              //if the cart is empty 
         {
-          $_SESSION['cart'][$itemcount+$num_item_incart] = $item;  //add item object to the cart without overwriting what was already there.
-          ++$itemcount; 
+          $_SESSION['cart'][0] = $item;                                  //add item object to the cart without overwriting what was already there.
+          ++$num_item_incart;                                            //we just put an item in the cart so we need to increment the number of items in the cart 
         }
     
-      elseif (array_search($item->name,$_SESSION['cart']) == FALSE )                    //if the item doesn't already exist in the cart
+      else                                                              //if the cart isn't empty 
         {
-          $_SESSION['cart'][$itemcount+$num_item_incart] = $item;  //add item object to the cart without overwriting what was already there.      
-         $itemcount = $itemcount+1;                                                            //increment the number of items in the cart because we just put something in there
-        } 
+          $existsincart = FALSE;                                         //initialize the variable
+          $count = 0;
+
+          while($count<$num_item_incart)                                //were going to check all of the items in the cart to see if what we want to add is already
+            {                                                            //in the cart 
+            
+           if ($_SESSION['cart'][$count]->name == $item->name)            //the item already exists in the cart, just increase the qty
+                {
+                  $existsincart = TRUE;                                   //note that the item does exist in cart so we don't add again later on
+                  $_SESSION['cart'][$count]->quantity += $item->quantity; //increase the qty of the item in the cart 
+                }
+              ++$count;                                                   //increment the counter  
+            } 
+
+          if ($existsincart == FALSE)                                    //we didn't find the item in the cart so append it to the end 
+            {
+             $_SESSION['cart'][$num_item_incart] = $item;             
+             ++$num_item_incart;                                        //we added another item in the cart so increment this number 
+            }
+
+        }  
+       
     }
 
-
-
+   echo '<h2> Your items were added to the cart</h2>';
+   echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Previous Page</a></br>'; //Create a link so the user can go back to the previous page
   }
+  
 
 ?>

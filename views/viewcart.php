@@ -2,7 +2,7 @@
 
 if (isset($_SESSION['cart']))                                                          //check to see if anything is in the cart
   {
-
+    echo '<form name="input" action="index.php?page=updatecart" method="post">';       //Start building a form that allows the user to update cart or submit the order.
     echo '<table border = "3">';                                                        //if so start building a table to display what's in the cart
     echo '<tr><td>Item Description</td><td>Unit Price</td><td>Quantity</td></tr>';        
     $dom = simplexml_load_file("../model/menu.xml");                                           //load the xml file so we can read it 
@@ -16,8 +16,13 @@ if (isset($_SESSION['cart']))                                                   
          $total_price += ($item->quantity * floatval($result[0]->price)); 
        }
     echo'</table>';
+    echo '<input type = "submit" value="Submit">';                                            //Button to submit the order
+    echo '<input type = "submit" value="Update">';                                            //Button to Update the quantities. 
+    echo'</form>'; 
     echo '<br>'; 
     echo 'Total Price is.......... $'.number_format($total_price,2);                           //print out the total price of the order below the table
+
+
 }
 
 else

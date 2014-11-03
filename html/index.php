@@ -36,6 +36,12 @@ switch ($page)
         render('viewcart');
         render('templates/footer');
         break; 
+
+    case 'submitupdatecart':
+        render('templates/header', array('title' => 'Welcome to 3 Aces'));
+        render('submitupdatecart');
+        render('templates/footer');
+        break;
 }
 
 ?>

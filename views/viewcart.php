@@ -2,23 +2,23 @@
 
 if (isset($_SESSION['cart']))                                                          //check to see if anything is in the cart
   {
-    echo '<form name="input" action="index.php?page=updatecart" method="post">';       //Start building a form that allows the user to update cart or submit the order.
-    echo '<table border = "3">';                                                        //if so start building a table to display what's in the cart
-    echo '<tr><td>Item Description</td><td>Unit Price</td><td>Quantity</td></tr>';        
-    $dom = simplexml_load_file("../model/menu.xml");                                           //load the xml file so we can read it 
-    $total_price = 0.0;                                                                  //initialize a variable that will display the total cost of the order 
+    echo '<form name="input" action="index.php?page=submitupdatecart" method="post">';       //Start building a form that allows the user to update cart or submit the order.
+    echo '<table border = "3">';                                                       //if so start building a table to display what's in the cart
+    echo '<tr><td>Item Description</td><td>Unit Price</td><td>Quantity</td></tr>';     //This is the top row with labels for each column   
+    $dom = simplexml_load_file("../model/menu.xml");                                   //load the xml file so we can read it 
+    $total_price = 0.0;                                                                //initialize a variable that will display the total cost of the order 
    
 
-    foreach ($_SESSION['cart'] as $item)
+    foreach ($_SESSION['cart'] as $item)                                              //iterate through each item in the cart
        {
          $result = $dom->xpath("/menu/categories/category/item/variation[@objnum='$item->name']");  //search the xml file for a variation with the correct object number
-         echo '<tr><td>'.$result[0]['cart_description'].'</td><td>'.$result[0]->price.'</td><td>'.$item->quantity.'</td></tr>';
-         $total_price += ($item->quantity * floatval($result[0]->price)); 
+         echo '<tr><td>'.$result[0]['cart_description'].'</td><td>'.$result[0]->price.'</td><td><input type = text value ='.$item->quantity.'></td></tr>'; //create a row for each cart item
+         $total_price += ($item->quantity * floatval($result[0]->price));                                //keep track of the total price 
        }
-    echo'</table>';
-    echo '<input type = "submit" value="Submit">';                                            //Button to submit the order
-    echo '<input type = "submit" value="Update">';                                            //Button to Update the quantities. 
-    echo'</form>'; 
+    echo'</table>';                                                                           //end the table
+    echo '<input type = "submit" name="Submit" value="Submit">';                                            //Button to submit the order
+    echo '<input type = "submit" name ="Update" value="Update">';                                            //Button to Update the quantities. 
+    echo'</form>';                                                                            //end the form
     echo '<br>'; 
     echo 'Total Price is.......... $'.number_format($total_price,2);                           //print out the total price of the order below the table
 
@@ -31,5 +31,5 @@ else
   }
 
 
-echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Main Page</a></br>';
+echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Main Page</a></br>';                       //Give the user a link back to the main page
 ?>

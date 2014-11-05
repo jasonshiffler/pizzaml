@@ -10,20 +10,23 @@ if (isset($_SESSION['cart']))                                                   
    
 
     foreach ($_SESSION['cart'] as $item)                                              //iterate through each item in the cart
-       {
-         $result = $dom->xpath("/menu/categories/category/item/variation[@objnum='$item->name']");  //search the xml file for a variation with the correct object number
-         echo '<tr><td>'.$result[0]['cart_description'].'</td><td>'.$result[0]->price.'</td><td><input type = text value ='.$item->quantity.'></td></tr>'; //create a row for each cart item
+      {
+         $result = $dom->xpath("/menu/categories/category/item/variation[@objnum='$item->name']");                         //search the xml file for a variation with the correct object number
+         echo '<tr>';                                                                                                      //begin the row
+         echo '<td><input type ="hidden" name = "cart[]"  value='.$item->name.'>';
+         echo  $result[0]['cart_description'].'</td>';
+         echo '<td>'.$result[0]->price.'</td><td><input type = "number" name = "cart[]"  value ='.$item->quantity.'></td>';
+         echo '</tr>';                                                                                                       //end the row
          $total_price += ($item->quantity * floatval($result[0]->price));                                //keep track of the total price 
-       }
+      }
     echo'</table>';                                                                           //end the table
-    echo '<input type = "submit" name="Submit" value="Submit">';                                            //Button to submit the order
-    echo '<input type = "submit" name ="Update" value="Update">';                                            //Button to Update the quantities. 
+    echo '<input type = "submit" name="buttontype" value="Submit">';                                            //Button to submit the order
+    echo '<input type = "submit" name ="buttontype" value="Update">';                                            //Button to Update the quantities. 
     echo'</form>';                                                                            //end the form
     echo '<br>'; 
     echo 'Total Price is.......... $'.number_format($total_price,2);                           //print out the total price of the order below the table
 
-
-}
+  }
 
 else
   {

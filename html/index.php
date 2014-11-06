@@ -25,7 +25,7 @@ switch ($page)
         render('templates/footer');
         break;
 
-     case 'addcart':
+     case 'managecart':
         render('templates/header', array('title' => 'Welcome to 3 Aces'));
         render('addcart');
         render('templates/footer');

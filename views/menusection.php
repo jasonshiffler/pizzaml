@@ -13,14 +13,14 @@ echo '<li>';
 
 $category = $dom->xpath("/menu/categories/category[@number='$categoryref']");            //create an array with all of the category menu data so we can display it  
 
-echo '<form name="input" action="index.php?page=addcart" method="post">';                              //create a form for order submission
+echo '<form name="input" action="index.php?page=managecart" method="post">';                              //create a form for order submission
 echo '<table border = "1">';                                                                 //create a table for the form
 echo '<tr><td>Item Description</td><td>Options</td><td>Quantity</td></tr>';                  //Create the top row of the form
 
 foreach($category[0]->item as $item)                                                         //the html row for each item
   {
     echo '<tr><td>'.$item[@name].'</td>';                                                    //displays the name of each item 
-    echo '<td><form action =""><select name ="'.$item['name'].'">';                           //create the pulldown form
+    echo '<td><form action =""><select name ="cart[]">';                           //create the pulldown form
     echo '<option value="Null">-Not Selected-</option>';                                      //the first option value is to not select an item
                                                                                              //This foreach populates each pulldown with the option       
     foreach ($item->variation as $variation)                                                 //populate the pull down with each possible variation
@@ -32,7 +32,7 @@ foreach($category[0]->item as $item)                                            
       }
     echo '</select>';                                                                         //done with this pull down 
     echo '</td>';
-    echo '<td><input type="text" maxlength="2" value="0" name='.str_replace(" ", "",$item["name"]).'qty></td>';   //create a text box to enter the quantity wanted, whitespace is stripped
+    echo '<td><input type="number" maxlength="2" value="0" name="cart[]"></td>';   //create a text box to enter the quantity wanted, whitespace is stripped
     echo '</tr>';                                                                                                //so $POST keyname doesn't get cutoff
   }
 

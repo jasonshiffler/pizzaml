@@ -6,6 +6,12 @@ $qtycount=0;
 $negativeqty=0;                                              //Boolean to track if the user entered a negative qty
 $ordered_something = FALSE;                                    //Boolean to track if something had a qty greater that 0
 
+if ($_POST['buttontype'] == 'updatecart')                    //If we're updating the cart clear the $_SESSION['cart'] var so we don't double our order
+  {
+    unset($_SESSION['cart']);
+  }
+
+
 foreach($_POST['cart'] as $item)                                     //This foreach splits the data from the POST into two arrays, one for objnums and one for qtys.
   {
     if ($count % 2 == 0)                                    //if the count is even its the objnum
@@ -29,13 +35,7 @@ foreach($_POST['cart'] as $item)                                     //This fore
      $count=$count+1;                                       //Keep track of where we are in the $_POST array   
   }
 
-if ($negativeqty==1)                                        //Check to see if they tried to order a negative qty
-  {
-   echo '<h2> Quantities must be positive!</h2>';
-   echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Previous Page</a></br>'; //Create a link so the user can go back to the previous page
-  }
-
-elseif($ordered_something == FALSE)                                           //Check to make sure at least one item had a qty >0
+if(($ordered_something == FALSE)&&($_POST['buttontype'] == 'addtocart'))   //Check to make sure at least one item had a qty >0
   {
   
    echo "<h2>You hit submit but didn't order anything!</h2>";
@@ -101,9 +101,19 @@ else                                                                          //
        
     }
 
-   echo '<h2> Your items were added to the cart</h2>';
-   echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Previous Page</a></br>'; //Create a link so the user can go back to the previous page
+if ($_POST['buttontype'] == 'updatecart')
+  {
+    echo '<h2> Your order was updated </h2>'; 
+    echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Previous Page</a></br>'; //Need to fix this part 
   }
+
+elseif($_POST['buttontype'] == 'addtocart')
+  {
+    echo '<h2> Your items were added to the cart</h2>';
+    echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Previous Page</a></br>'; //Create a link so the user can go back to the previous page and keep ordering
+  }  
+
   
+}  
 
 ?>

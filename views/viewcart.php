@@ -21,8 +21,8 @@ if (isset($_SESSION['cart']))                                                   
          $total_price += ($item->quantity * floatval($result[0]->price));                                //keep track of the total price 
       }
     echo'</table>';                                                                           //end the table
-    echo '<input type = "submit" name="buttontype" value="submitorder">';                                            //Button to submit the order
-    echo '<input type = "submit" name ="buttontype" value="updatecart">';                                            //Button to Update the quantities. 
+    echo '<button type = "submit" name = "buttontype" value = "submitorder">Submit</button>';    
+    echo '<button type = "submit" name = "buttontype" value = "updatecart">Update</button>';
     echo'</form>';                                                                            //end the form
     echo '<br>'; 
     echo 'Total Price is.......... $'.number_format($total_price,2);                           //print out the total price of the order below the table

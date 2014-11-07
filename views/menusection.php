@@ -1,5 +1,14 @@
 <?php
 
+/* 
+This file creates a form/table for each menu section so that a user
+can select the type and quantity of items they want and then add them 
+to the cart. The menu.xml file is used to build the table. Once the
+user hits submit the objectnumber and qty and put into the $_POST['cart']
+array
+*/
+
+
 $dom = simplexml_load_file("../model/menu.xml");                                          //create an array to hold the menu data
 $categoryref = $_GET['categorynumber'];                                                   //get the category number of the category that should be displayed
 
@@ -32,13 +41,14 @@ foreach($category[0]->item as $item)                                            
       }
     echo '</select>';                                                                         //done with this pull down 
     echo '</td>';
-    echo '<td><input type="number" maxlength="2" value="0" name="cart[]"></td>';   //create a text box to enter the quantity wanted, whitespace is stripped
+    echo '<td><input type="number" maxlength="2" value="0" min = "0" max = "50" name="cart[]"></td>';   //create a text box to enter the quantity wanted, whitespace is stripped
     echo '</tr>';                                                                                                //so $POST keyname doesn't get cutoff
   }
 
-echo '</table>';                                                                              //done with table
-echo '<input type = "submit" value="Submit">';                                               //create a submit button
-echo '</form>';                                                                              //done with form 
+echo '</table>';                                                                             //done with table
+echo '<button type = "submit" name = "buttontype" value = "addtocart">Submit</button>';      //created a submit button
+
+echo '</form>';                                                                             //done with form 
 echo '<br>';
 echo '<a href=http://'.$GLOBALS['server_ref'].'> Main Page </a>';                           //create a link back to the main page
 

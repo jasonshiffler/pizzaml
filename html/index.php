@@ -27,7 +27,7 @@ switch ($page)
 
      case 'managecart':
         render('templates/header', array('title' => 'Welcome to 3 Aces'));
-        render('addcart');
+        render('managecart');
         render('templates/footer');
         break;
 
@@ -37,11 +37,6 @@ switch ($page)
         render('templates/footer');
         break; 
 
-    case 'submitupdatecart':
-        render('templates/header', array('title' => 'Welcome to 3 Aces'));
-        render('submitupdatecart');
-        render('templates/footer');
-        break;
 }
 
 ?>

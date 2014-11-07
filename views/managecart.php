@@ -29,7 +29,6 @@ foreach($_POST['cart'] as $item)                                     //This fore
      $count=$count+1;                                       //Keep track of where we are in the $_POST array   
   }
 
-
 if ($negativeqty==1)                                        //Check to see if they tried to order a negative qty
   {
    echo '<h2> Quantities must be positive!</h2>';

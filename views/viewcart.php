@@ -15,7 +15,8 @@ if (isset($_SESSION['cart']))                                                   
          echo '<tr>';                                                                                                      //begin the row
          echo '<td><input type ="hidden" name = "cart[]"  value='.$item->name.'>';
          echo  $result[0]['cart_description'].'</td>';
-         echo '<td>'.$result[0]->price.'</td><td><input type = "number" name = "cart[]"  value ='.$item->quantity.'></td>';
+         echo '<td>'.$result[0]->price.'</td>';
+         echo '<td><input type = "number" name = "cart[]" min = "0" max = "50"  value ='.$item->quantity.'></td>';
          echo '</tr>';                                                                                                       //end the row
          $total_price += ($item->quantity * floatval($result[0]->price));                                //keep track of the total price 
       }

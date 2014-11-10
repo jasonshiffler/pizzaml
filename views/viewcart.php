@@ -35,5 +35,5 @@ else
   }
 
 
-echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Main Page</a></br>';                       //Give the user a link back to the main page
+echo '<br><a href="'.$GLOBALS['mainpageurl'].'">Main Page</a>';                       //Give the user a link back to the main page
 ?>

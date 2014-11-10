@@ -104,7 +104,7 @@ else                                                                          //
 if ($_POST['buttontype'] == 'updatecart')
   {
     echo '<h2> Your order was updated </h2>'; 
-    echo '<br><a href="'.$_SERVER['HTTP_REFERER'] .'">Previous Page</a></br>'; //Need to fix this part 
+    echo '<br><a href="'.$GLOBALS['cartpageurl'] .'">View Cart</a></br>'; //Need to fix this part 
   }
 
 elseif($_POST['buttontype'] == 'addtocart')

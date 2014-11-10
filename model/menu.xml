@@ -45,19 +45,19 @@
     </item>
     
    <item name = "Broccoli" objnum="0002">     
-      <variation objnum = "000200" size = "small" description ="Small w/o extra cheese"  cart_description ="Small Pepper Pizza">
+      <variation objnum = "000200" size = "small" description ="Small w/o extra cheese"  cart_description ="Small Broccoli Pizza">
        <price>6.85</price>
        </variation>
     
-      <variation objnum = "000201" size = "small" description ="Small w/extra cheese"  cart_description ="Small Pepper Pizza w/Extra Cheese">
+      <variation objnum = "000201" size = "small" description ="Small w/extra cheese"  cart_description ="Small Broccoli Pizza w/Extra Cheese">
        <price>8.10</price>
       </variation>
      
-      <variation objnum = "000202" size = "large" description ="Large w/o extra cheese"  cart_description ="Large Pepper Pizza">
+      <variation objnum = "000202" size = "large" description ="Large w/o extra cheese"  cart_description ="Large Broccoli Pizza">
        <price>10.85</price>
       </variation> 
     
-      <variation objnum = "000203" size = "large" description ="Large w/extra cheese"  cart_description ="Large Pepper Pizza w/Extra Cheese">
+      <variation objnum = "000203" size = "large" description ="Large w/extra cheese"  cart_description ="Large Broccoli Pizza w/Extra Cheese">
        <price>12.70</price>
       </variation>    
     </item>

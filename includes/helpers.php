@@ -4,6 +4,8 @@
 #This reference is for any local links that need to be created 
 
 $GLOBALS['server_ref'] = '10.3.11.84';
+$GLOBALS['mainpageurl'] = 'http://'.$GLOBALS['server_ref'].'/index.php'; 
+$GLOBALS['cartpageurl'] = 'http://'.$GLOBALS['server_ref'].'/?page=viewcart';
 
 
 /**
